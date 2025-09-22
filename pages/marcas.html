@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MARCAS</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MARCAS</title>
+  <link rel="stylesheet" href="../css/marcas.css">
 </head>
 <body>
-    
+
+  <section class="brands-section">
+    <h1 class="brands-title">GRANDES MARCAS NOS AVALAN</h1>
+
+    <div class="container">
+      <img src="../image/nike.png" alt="nike">
+      <img src="../image/jordan.png" alt="jordan">
+      <img src="../image/adidas.png" alt="adidas">
+      <img src="../image/logoguccii.png" alt="gucci">
+    </div>
+  </section>
+
+  <script>
+    const elements = document.querySelectorAll('.container img, .brands-title');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => observer.observe(el));
+  </script>
+
 </body>
 </html>

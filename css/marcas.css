@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #111, #222);
+  color: #fff;
+}
+
+
+.brands-section {
+  min-height: 100vh;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.brands-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all 0.8s ease;
+}
+
+.brands-title.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .brands-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 50vh);
+  gap: 20px;
+  padding: 20px;
+}
+
+
+.container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transform: translateY(50px) scale(0.9);
+  transition: all 0.8s ease;
+}
+
+.container img.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.container img:hover {
+  transform: scale(1.1) rotateY(10deg) rotateX(5deg);
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.3),
+              0 0 25px rgba(255, 255, 255, 0.5);
+  filter: brightness(1.2);
+}
+
+
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 15px;
+  }
+
+  .container img {
+    padding: 20px;
+    border-radius: 15px;
+  }
+}
+
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.05), transparent 40%),
+              radial-gradient(circle at 80% 80%, rgba(255,255,255,0.05), transparent 40%);
+  animation: moveBg 10s infinite alternate ease-in-out;
+  z-index: -1;
+}
+
+@keyframes moveBg {
+  0% { background-position: 20% 20%, 80% 80%; }
+  100% { background-position: 80% 80%, 20% 20%; }
+}
