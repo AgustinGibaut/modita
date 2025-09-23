@@ -1,0 +1,71 @@
+.ccontainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+.required {
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+.contact-form {
+    flex: 1 1 400px;
+    background: radial-gradient(circle at top left, #0f0f1f, #000);
+    padding: 2rem;
+    border-radius: 12px;
+    color: #fff;
+}
+
+.contact-form h2 {
+    margin-bottom: 1rem;
+    color: #c6cecb;
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 251, 251, 0.959);
+    color: #fff;
+}
+
+
+.contact-form button {
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    background: #ccd3d1;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.maps {
+    flex: 1 1 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    animation: pulseGlow 6s infinite alternate ease-in-out;
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 25px rgb(231, 236, 235);
+    }
+    100% {
+        box-shadow: 0 0 35px rgba(242, 245, 244, 0.6);
+    }
+}
